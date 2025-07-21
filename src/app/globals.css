@@ -127,5 +127,6 @@ body {
     .hex-code {
         left: 0.5em;
         padding-left: 0.5em;
+        bottom: 10px;
     }
 }
