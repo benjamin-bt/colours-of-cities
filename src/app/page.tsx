@@ -44,18 +44,8 @@ export default function Home() {
 
   return (
     <div className="container">
-      <h1
-        id="city-name"
-        style={isMobile ? { fontSize: "5em" } : undefined}
-      >
-        {selected?.city}
-      </h1>
-      <div
-        className="hex-code"
-        style={isMobile ? { fontSize: "1.5em" } : undefined}
-      >
-        {copied ? "Code copied!" : hoveredColor}
-      </div>
+      <h1 id="city-name">{selected?.city}</h1>
+      <div className="hex-code">{copied ? "Code copied!" : hoveredColor}</div>
       <div className="palette">
         {selected &&
           (isMobile
@@ -64,7 +54,9 @@ export default function Home() {
           ).map((color, i) => (
             <div
               key={i}
-              className={`color${copied && hoveredColor === color ? " clicked" : ""}`}
+              className={`color${
+                copied && hoveredColor === color ? " clicked" : ""
+              }`}
               style={{ backgroundColor: color }}
               onMouseOver={() => setHoveredColor(color)}
               onMouseOut={() => setHoveredColor("")}
